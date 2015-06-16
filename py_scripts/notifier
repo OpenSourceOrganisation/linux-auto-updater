@@ -21,3 +21,10 @@ def get_ip():
     finally:
         s.close()
     return IP
+
+def check_network_access(hostname="8.8.8.8") :
+    a = os.system("ping -c1 "+hostname+" > /dev/null")
+    if a == 0 :
+        notify("Network Access","successful")
+    else :
+        notify("Network Access","unsuccessful")
