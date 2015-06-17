@@ -29,9 +29,10 @@ if __name__ == "__main__" :
 		
 	widget.setWindowTitle('https://github.com/OpenSourceOrganisation/')
 	# widget.setWindowIcon(QtGui.QIcon('exit.png'))
-	
+
 	if foldername == {} :
 		i = 0
+		print "press Cancel to prevent further instances of the dialog from coming"
 		while True : 
 			name = QtGui.QFileDialog.getExistingDirectory(widget,'Choose a GIT directory')
 			if name :
@@ -41,8 +42,8 @@ if __name__ == "__main__" :
 				# do the real task here
 				break
 	
-	print foldername
-	git_pull_push(foldername,i)
+	# print foldername
+	git_pull_push(foldername,len(foldername.keys()))
 
 	
 	
