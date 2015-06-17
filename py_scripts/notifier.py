@@ -23,11 +23,14 @@ def get_ip():
     return IP
 
 def show_on_systems(start,subnet,end) :
+    count = 0
     for i in range(start,end+1) :
         ip_addr = "192.168."+str(subnet)+"."+str(i)
         ret = os.system("ping -c1 "+str(ip_addr)+" > /dev/null")
         if ret == 0 :
             print ip_addr
+            count = count + 1
+    return count
 
 def check_network_access(hostname="8.8.8.8") :
     a = os.system("ping -c1 "+hostname+" > /dev/null")
@@ -35,3 +38,4 @@ def check_network_access(hostname="8.8.8.8") :
         notify("Network Access","successful")
     else :
         notify("Network Access","unsuccessful")
+    yield a
