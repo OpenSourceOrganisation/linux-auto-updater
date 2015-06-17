@@ -28,3 +28,10 @@ def show_on_systems(start,subnet,end) :
         ret = os.system("ping -c1 "+str(ip_addr)+" > /dev/null")
         if ret == 0 :
             print ip_addr
+
+def check_network_access(hostname="8.8.8.8") :
+    a = os.system("ping -c1 "+hostname+" > /dev/null")
+    if a == 0 :
+        notify("Network Access","successful")
+    else :
+        notify("Network Access","unsuccessful")
