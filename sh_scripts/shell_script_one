@@ -11,7 +11,3 @@ list_ping(){
 	fi
     done
 }
-
-get_current_ip(){
-
-}
