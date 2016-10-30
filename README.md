@@ -13,3 +13,4 @@ an application to make update notification easy in GNU/Linux operating systems.
 - if time_difference
 	- notfy users
 
+Please feel free to make contributions.
